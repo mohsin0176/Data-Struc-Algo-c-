@@ -1,4 +1,4 @@
-#include<bits/std++.h>
+#include <bits/stdc++.h>
 #include<iostream>
 using namespace std;
 
@@ -29,7 +29,7 @@ int choice;
         cout<<"Menu"<<endl;
         cout<<"1.Create"<<endl;
         cout<<"2.Display"<<endl;
-        cout<<"3.Insert At The Begining"<<end;
+        cout<<"3.Insert At The Begining"<<endl;
         cout<<"4.Insert At End"<<endl;
         cout<<"5.Insert At Specific Position"<<endl;
         cout<<"6.Delete From Begining"<<endl;
@@ -55,7 +55,7 @@ int choice;
             break;
         case 5:
             insert_pos();
-            break
+            break;
         case 6:
             delete_begin();
             break;
@@ -71,4 +71,52 @@ int choice;
         }
     }
     return 0;
+}
+
+
+void create()
+{
+    struct node *temp,*ptr;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL)
+    {
+        cout<<"Out of Memory Space";
+        exit(0);
+    }
+    cout<<"Enter The Data Value for the node"<<endl;
+    cin>>temp->data;
+    temp->next=NULL;
+    if(head==NULL)
+    {
+        head=temp;
+    }
+    else
+    {
+        ptr=head;
+        while(ptr->next!=NULL)
+        {
+            ptr=ptr->next;
+        }
+        ptr->next=temp;
+    }
+}
+
+void display()
+{
+    struct node *ptr;
+    if(head==NULL)
+    {
+        cout<<"List is Empty";
+        return;
+    }
+    else
+    {
+        ptr=head;
+        cout<<"Elements are:"<<endl;
+        while(ptr!=NULL)
+        {
+            cout<<ptr->data;
+            ptr=ptr->next;
+        }
+    }
 }
