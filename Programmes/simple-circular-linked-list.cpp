@@ -70,7 +70,7 @@ void insert_beg()
     cout<<"Enter Data"<<endl;
     cin>>num;
     t->data=num;
-    count++;
+    //count++;
     if(head==NULL)
     {
         t->next=NULL;
@@ -145,7 +145,7 @@ void display()
     {
         cout<<"List Empty"<<endl;
     }
-    cout<<count;
+//    cout<<count;
     q=head;
     cout<<"The Linked List"<<endl;
     while(q!=NULL)
