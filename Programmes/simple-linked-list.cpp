@@ -120,3 +120,171 @@ void display()
         }
     }
 }
+void insert_begin()
+{
+    struct node* temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL)
+    {
+        cout<<"Out of Memory Space"<<endl;
+        return;
+    }
+    cout<<"Enter The Data Value for The Node"<<endl;
+    cin>>temp->data;
+    temp->next=NULL;
+        if(head==NULL)
+        {
+            head=temp;
+        }
+        else
+        {
+            temp->next=head;
+            head=temp;
+        }
+}
+void insert_end()
+{
+    struct node *temp,*ptr;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL)
+    {
+        cout<<"Out Of Memory Space"<<endl;
+        return;
+    }
+    cout<<"Enter The Data Value For The node"<<endl;
+    cin>>temp->data;
+    temp->next=NULL;
+    if(head==NULL)
+    {
+        head=temp;
+    }
+    else
+    {
+        ptr=head;
+        while(ptr->next!=NULL)
+        {
+            ptr=ptr->next;
+        }
+        ptr->next=temp;
+    }
+}
+void insert_pos()
+{
+    struct node *ptr,*temp;
+    int i,pos;
+    temp=(struct node*)malloc(sizeof(struct node));
+    if(temp==NULL)
+    {
+        cout<<"Out Of Memory Space"<<endl;
+        return;
+    }
+    cout<<"Enter The Position of New node "<<endl;
+    cin>>pos;
+    cout<<"Enter The Data Value For The Node"<<endl;
+    cin>>temp->data;
+    temp->next=NULL;
+    if(pos==0)
+    {
+        temp->next=head;
+        head=temp;
+    }
+    else
+    {
+        for(i=0,ptr=head;i<pos-1;i++)
+        {
+            ptr=ptr->next;
+            if(ptr==NULL)
+            {
+                cout<<"Position Not Found"<<endl;
+                return;
+            }
+        }
+        temp->next=ptr->next;
+        ptr->next=temp;
+    }
+}
+void delete_begin()
+{
+    struct node *ptr;
+    if(ptr==NULL)
+    {
+        cout<<"List is Empty"<<endl;
+        return;
+    }
+    else
+    {
+        ptr=head;
+        head=head->next;
+        cout<<ptr->data;
+        free(ptr);
+    }
+}
+void delete_end()
+{
+    struct node* temp,*ptr;
+    if(head==NULL)
+    {
+        cout<<"List is Empty"<<endl;
+        exit(0);
+    }
+    else if(head->next==NULL)
+    {
+        ptr=head;
+        head=NULL;
+        cout<<ptr->data;
+        free(ptr);
+    }
+    else
+    {
+        ptr=head;
+        while(ptr->next!=NULL)
+        {
+            temp=ptr;
+            ptr=ptr->next;
+        }
+        temp->next=NULL;
+        cout<<ptr->data;
+        free(ptr);
+    }
+}
+
+void delete_pos()
+{
+    int i,pos;
+    struct node* temp,*ptr;
+    if(head==NULL)
+    {
+        cout<<"List is Empty"<<endl;
+        exit(0);
+    }
+    else
+    {
+        cout<<"Enter The Position of deleted element"<<endl;
+        cin>>pos;
+        if(pos==0)
+        {
+            ptr=head;
+            head=head->next;
+            cout<<"Deleted Element is"<<ptr->data;
+            free(ptr);
+        }
+        else
+        {
+            ptr=head;
+            for(i=0;i<pos;i++)
+            {
+                temp=ptr;
+                ptr=ptr->next;
+                if(ptr==NULL)
+                {
+                    cout<<"Positon Not Found"<<endl;
+                    return;
+                }
+            }
+            temp->next=ptr->next;
+            cout<<ptr->data;
+            free(ptr);
+
+        }
+    }
+}
