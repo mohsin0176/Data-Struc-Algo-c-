@@ -11,7 +11,7 @@ void delete_begin();
 void delete_end();
 void delete_pos();
 
-struct Node
+struct node
 {
     int data;
     struct node* next;
