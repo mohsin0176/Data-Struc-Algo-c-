@@ -247,3 +247,87 @@ void delete_at_beg()
     }
 }
 
+void delete_at_end()
+{
+    int pos,i,count=0;
+    n *temp,*prevnode;
+    if(first==last&&first==NULL)
+    {
+        cout<<"You can delete"<<endl;
+    }
+    else
+    {
+        for(ptr=first,i=1;i<=number;i++)
+        {
+            prevnode=ptr;
+            ptr=ptr->next;
+            if(i=number-1)
+            {
+                number--;
+                prevnode->next=ptr->next;
+                ptr->next->prev=prevnode;
+                cout<<ptr->val;
+                free(ptr);
+                break;
+            }
+            if(1==1)
+            {
+                number--;
+                last->next=prevnode->next;
+                ptr->prev=prevnode->prev;
+                first=ptr;
+                cout<<prevnode->val;
+                free(prevnode);
+                break;
+            }
+        }
+    }
+}
+
+
+void delete_at_position()
+{
+    int pos,i,count=0;
+    n *temp,*prevnode;
+    cout<<"Enter Position"<<endl;
+    cin>>pos;
+    if(first==last&&first==NULL)
+    {
+        cout<<"You can not delete"<<endl;
+    }
+    else
+    {
+        if(number<pos)
+        {
+            cout<<"Can not Delete"<<endl;
+        }
+        else
+        {
+            for(ptr=first;i=1;i<=number;i++)
+            {
+                prevnode=ptr;
+                ptr=ptr->next;
+                if(pos==1)
+                {
+                    number--;
+                    last->next=prevnode->next;
+                    ptr->prev=prevnode->prev;
+                    first=ptr;
+                    cout<<prevnode->val;
+                    free(prevnode);
+                    break;
+                }
+                else if(i=pos-1)
+                {
+                    number--;
+                    prevnode->next=ptr->next;
+                    ptr->next->prev=prevnode;
+                    cout<<ptr->val;
+                    free(ptr);
+                    break;
+                }
+
+            }
+        }
+    }
+}
