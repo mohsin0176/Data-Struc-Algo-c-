@@ -143,3 +143,77 @@ void display()
         }
     }
 }
+void insert_at_position()
+{
+    int info,pos,i;
+    n *prevnode;
+    cout<<"Enter The Value"<<endl;
+    cin>>info;
+    cout<<"Enter The Position"<<endl;
+    cin>>pos;
+    new=create_node(info);
+    if(first==last&&first==NULL)
+    {
+        if(pos==1)
+        {
+            first=last=new;
+            first->next=last->next=NULL;
+            first->prev=last->next=NULL;
+        }
+        else
+        {
+            cout<<"You Can insert at a particular position"<<endl;
+        }
+    }
+    else
+    {
+        if(number<pos)
+        {
+            cout<<"Node can not be inserted"<<endl;
+            else
+            {
+                for(ptr=first;i=1;i<=number;i++)
+                {
+                    prevnode=ptr;
+                    ptr=ptr->next;
+                    if(i=pos-1)
+                    {
+                        prevnode->next=new;
+                        new->prev=prevnode;
+                        new->next=ptr;
+                        ptr->prev=new;
+                        cout<<pos;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void display_in_rev()
+{
+    int i;
+    if(first==last&&first==NULL)
+    {
+        cout<<"you can not delete"<<endl;
+    }
+    else
+    {
+        for(ptr=first;i=1;i<=number;i++)
+        {
+            prevnode=ptr;
+            ptr=ptr->next;
+            if(pos==1)
+            {
+                number--;
+                last->next=prevnode->next;
+                ptr->prev=prevnode->prev;
+                first=ptr;
+                cout<<prevnode->val;
+                free(prevnode);
+                break;
+            }
+        }
+    }
+}
