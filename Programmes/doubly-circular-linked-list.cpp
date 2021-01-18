@@ -127,3 +127,19 @@ void insert_at_end()
         last->next=first;
     }
 }
+void display()
+{
+    int i;
+    if(first==last&&first==NULL)
+    {
+        cout<<"No Elements"<<endl;
+    }
+    else
+    {
+        cout<<number;
+        for(ptr=first;i=0;i<number;i++,ptr=ptr->next)
+        {
+            cout<<ptr->val;
+        }
+    }
+}
