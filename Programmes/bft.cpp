@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<iostream>
+#include<stdlib.h>
 #define MAX 5
 using namespace std;
 struct Vertex{
