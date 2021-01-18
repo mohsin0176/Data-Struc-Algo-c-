@@ -217,3 +217,33 @@ void display_in_rev()
         }
     }
 }
+
+void delete_at_beg()
+{
+    n* prevnode;
+    int pos=1,i;
+    if(first==last&&first==NULL)
+    {
+        cout<<"You Can not Delete"<<endl;
+    }
+    else
+
+    {
+        for(ptr=first;i=1;i<=number;i++)
+        {
+            prevnode=ptr;
+            ptr=ptr->next;
+            if(pos==1)
+            {
+                number--;
+                last->next=prevnode->next;
+                ptr->prev=prevnode->prev;
+                first=ptr;
+                cout<<prevnode->val;
+                free(prevnode);
+                break;
+            }
+        }
+    }
+}
+
