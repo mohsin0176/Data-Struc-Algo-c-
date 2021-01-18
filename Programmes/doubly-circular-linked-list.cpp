@@ -104,4 +104,26 @@ typedef struct node n;
          first->prev=last;
      }
  }
-
+void insert_at_end()
+{
+    int info;
+    cout<<"Enter The Value"<<endl;
+    cin>>info;
+    new=create_node(info);
+    if(first==last&&first==NULL)
+    {
+        cout<<"Inserted Done"<<endl;
+        first=last=new;
+        first->next=last->next=NULL;
+        first->prev=last->prev=NULL;
+    }
+    else
+    {
+        cout<<"Insert Done"<<endl;
+        last->next=new;
+        new->prev=last;
+        last=new;
+        first->prev=last;
+        last->next=first;
+    }
+}
