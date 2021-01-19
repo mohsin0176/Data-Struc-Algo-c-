@@ -109,3 +109,19 @@ void inorder(struct btnode *t)
         inorder(t->r);
     }
 }
+
+
+void delete()
+{
+    int data;
+    if(root==NULL)
+    {
+        cout<<"NO element to delete"<<endl;
+        return;
+    }
+    cout<<"Enter data to be deleted"<<endl;
+    cin>>data;
+    t1=root;
+    t2=root;
+    search1(root,data);
+}
