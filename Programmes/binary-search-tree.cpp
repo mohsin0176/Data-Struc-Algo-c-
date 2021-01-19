@@ -94,3 +94,18 @@ void search(struct btnode *t)
         t->temp;
 
 }
+void inorder(struct btnode *t)
+{
+    if(root==NULL)
+    {
+        cout<<"No Elements in The Tree"<<endl;
+        return;
+    }
+    if(t->!=NULL)
+    {
+        inorder(t->l);
+        cout<<t->value;
+        if(t->r!=NULL)
+        inorder(t->r);
+    }
+}
