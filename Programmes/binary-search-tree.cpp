@@ -82,3 +82,15 @@ void create()
     temp->l=temp->r=NULL:
 
 }
+void search(struct btnode *t)
+{
+    if((temp->value>t->value)&&(t->!=NULL))
+        search(t->r);
+    else if((temp->value>t->value)&&(t->NULL))
+        t->r=temp;
+    else if((temp->value<t->value)&&(t->!=NULL))
+        search(t->l);
+    else if((temp->value<t->value)&&(t->=NULL))
+        t->temp;
+
+}
