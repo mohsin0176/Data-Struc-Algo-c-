@@ -125,3 +125,29 @@ void delete()
     t2=root;
     search1(root,data);
 }
+void preorder(struct btnode *t)
+{
+    if(root==NULL)
+    {
+        cout<<"No Elements in Tree To Display"<<endl;
+        return;
+    }
+    cout<<t->value;
+    if(t->r!=NULL)
+    postorder(t->r);
+    cout<<t->value;
+}
+
+void postorder(struct btnode *t)
+{
+    if(root==NULL)
+    {
+        cout<<"No Elements in a Tree to display"<<endl;
+        return;
+    }
+    if(t->l!=NULL)
+        postorder(t->l);
+    if(t->!=NULL)
+        postorder(t->r);
+         cout<<t->value;
+}
