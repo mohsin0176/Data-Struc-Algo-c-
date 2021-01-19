@@ -59,6 +59,16 @@ void main()
             break;
         }
     }
-
-
+}
+void insert()
+{
+    create();
+    if(root==NULL)
+    {
+        root=temp;
+    }
+    else
+    {
+        search(root);
+    }
 }
