@@ -72,3 +72,13 @@ void insert()
         search(root);
     }
 }
+void create()
+{
+    int data;
+    cout<<"Enter Data to be inserted"<<endl;
+    cin>>data;
+    temp=(struct btnode*)malloc(1*sizeof(struct btnode));
+    temp->value=data;
+    temp->l=temp->r=NULL:
+
+}
