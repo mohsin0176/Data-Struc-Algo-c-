@@ -151,3 +151,96 @@ void postorder(struct btnode *t)
         postorder(t->r);
          cout<<t->value;
 }
+
+void search1(struct btnode *t,int data)
+{
+    if((data>t->value))
+    {
+        t1=t;
+        search1(t->r,data);
+    }
+    else if((data<t->value))
+    {
+        t1=t;
+        search1(t->l,data);
+    }
+    else if((data==t->value))
+    {
+        delete1(t);
+    }
+}
+void delete1(struct btnode *t)
+{
+    int k;
+    if((t->l==NULL)&&(t->r==NULL))
+    {
+        if(t1->l==t)
+        {
+            t1->l==NULL;
+        }
+        else
+        {
+            t1->r=NULL;
+        }
+        t=NULL;
+        free(t);
+        return;
+    }
+    else if((t->r==NULL))
+    {
+        if(t1==t)
+        {
+            root=t->l;
+            t1=root;
+        }
+        else if(t1->l==t)
+        {
+            t1->l=t->l;
+        }
+        else
+        {
+            t1->r=t->l;
+        }
+        t=NULL;
+        free(t);
+        return;
+    }
+    else if((t1->l!=NULL)&&(t->r!=NULL))
+    {
+        t2=root;
+        if(t->r!=NULL)
+        {
+            k=smallest(t->r);
+            flag=1;
+        }
+        else
+        {
+            k=largest(t->l);
+            flag=2;
+        }
+        search1(root,k);
+        t->value;
+
+    }
+}
+int smallest(struct btnode *t)
+{
+    t2=t;
+    if(t->l!=NULL)
+    {
+        t2=t;
+        return (smallest(t->l));
+    }
+    else
+        return (t->value);
+}
+int largest(struct btnode *t)
+{
+    if(t->r!=NULL)
+    {
+        t2=t;
+        return(largest(t->r));
+    }
+    else
+        return (t->value);
+}
