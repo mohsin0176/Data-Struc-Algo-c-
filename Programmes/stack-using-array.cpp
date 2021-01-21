@@ -9,7 +9,7 @@ void pop();
 void display();
 int menu();
 int stack[max],top=0;
-int main()
+void main()
 {
     int ch;
     do
@@ -34,7 +34,7 @@ int main()
         }
         }
         while(1);
-        return 0;
+
 }
 
 int menu()
